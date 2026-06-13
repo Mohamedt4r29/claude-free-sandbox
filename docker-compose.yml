@@ -1,0 +1,34 @@
+networks:
+  internal:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge
+
+services:
+  proxy:
+    build: ./docker/proxy_api_translator
+    container_name: litellm_proxy
+    networks:
+      - internal
+      - internet
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    restart: unless-stopped
+
+  claude:
+    build: ./docker/claude_code
+    container_name: claude_code
+    depends_on:
+      - proxy
+    networks:
+      - internal
+    environment:
+      - ANTHROPIC_BASE_URL=http://proxy:4000
+      - ANTHROPIC_AUTH_TOKEN=dummy-key
+      - ANTHROPIC_MODEL=claude-code-model
+      - DISABLE_TELEMETRY=1
+    volumes:
+      - .:/home/developer/workspace
+    stdin_open: true
+    tty: true
