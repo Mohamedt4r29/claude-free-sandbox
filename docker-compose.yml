@@ -29,6 +29,7 @@ services:
       - ANTHROPIC_MODEL=claude-code-model
       - DISABLE_TELEMETRY=1
     volumes:
-      - .:/home/developer/workspace
+      - ${PROJECT_PATH}:/home/developer/workspace
+      
     stdin_open: true
     tty: true
