@@ -5,5 +5,47 @@ model_list:
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/qwen/qwen3-coder:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/deepseek/deepseek-r1:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v3:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/openai/gpt-oss-120b:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/nvidia/llama-3.1-nemotron-ultra-253b-v1:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/meta-llama/llama-4-maverick:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
 litellm_settings:
   drop_params: true
