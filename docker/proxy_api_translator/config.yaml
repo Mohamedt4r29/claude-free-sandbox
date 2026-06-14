@@ -47,5 +47,11 @@ model_list:
       api_base: https://openrouter.ai/api/v1
       api_key: os.environ/OPENROUTER_API_KEY
 
+  - model_name: claude-code-model
+    litellm_params:
+      model: openrouter/moonshotai/kimi-k2:free
+      api_base: https://openrouter.ai/api/v1
+      api_key: os.environ/OPENROUTER_API_KEY
+
 litellm_settings:
   drop_params: true
