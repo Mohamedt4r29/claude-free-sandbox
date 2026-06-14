@@ -10,9 +10,8 @@ $env:PROJECT_PATH = $PROJECT_PATH
 Write-Host "Claude Sandbox starting..."
 Write-Host "Project: $PROJECT_PATH"
 
-# Move to sandbox and start containers
-Set-Location $SANDBOX_PATH
-docker compose up -d
+# Start containers
+docker compose -f "$SANDBOX_PATH\docker-compose.yml" up -d
 
 # Attach to Claude Code
 docker attach claude_code
